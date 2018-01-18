@@ -1,5 +1,5 @@
 import psycopg2
-import secrets
+from .. import secrets
 from psycopg2 import sql
 
 
