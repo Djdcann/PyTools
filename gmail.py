@@ -12,22 +12,22 @@ class Gmail:
 
     def __init__(self, user, pwd):
         self.address = user
-        self.server = self.login(pwd)
+        self.server = None
+        self.__login(pwd)
 
     def __del__(self):
-        self.logout()
+        self.__logout()
 
-    def login(self, pwd):
+    def __login(self, pwd):
         try:
-            server = smtplib.SMTP_SSL(self.smtp_server, 465)
-            server.login(self.address, pwd)
+            self.server = smtplib.SMTP_SSL(self.smtp_server, 465)
+            self.server.login(self.address, pwd)
             self.smtp_active = True
-            return server
         except Exception as e:
             print "Couldn't login!"
             print e.message
 
-    def logout(self):
+    def __logout(self):
         self.server.close()
         self.smtp_active = False
 
