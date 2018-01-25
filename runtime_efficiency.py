@@ -31,3 +31,9 @@ def print_prof_data():
 def clear_prof_data():
     global PROF_DATA
     PROF_DATA = {}
+
+# tag with @profile to measure
+# Example:
+# @profile
+# def func_name(params):
+#     do the stuff
