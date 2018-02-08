@@ -3,8 +3,8 @@ import re
 import os
 import urllib
 
-download_path = r"D:\Music\BandcampDL"
-
+# download_path = r"D:\Music\BandcampDL"
+download_path = r"C:\Users\cannistrarod\Music\BandcampDL"
 
 # download music from bandcamp URL
 def bandcamp_download(url):
