@@ -23,7 +23,8 @@ def bandcamp_download(url):
     album = validate(album)
 
     print 'downloading album/track %s' % album
-
+    m = re.search(r'(?<=EmbedData = )\{.+?\n\}', html, flags=re.DOTALL)
+    embed_data = m.group(0)
     m = re.search(r'(?<=trackinfo: )\[\{.+\}\]', html)
 
     if not os.path.exists(download_path + "\\" + album):
